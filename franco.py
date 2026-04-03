@@ -1,6 +1,20 @@
 # FB 1st Character manager
 import sys
+import pandas
+import matplotlib
+
 from Editing_function import editcharacters
+
+class DataVisualization:
+    pass
+
+class Statisticalanalyzer:
+    pass
+
+class RandomGenerator:
+    pass
+
+
 
 def validate_input(text, kind='int'):
     s = str(text).strip().capitalize()
