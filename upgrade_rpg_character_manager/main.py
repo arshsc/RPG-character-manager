@@ -1,28 +1,18 @@
-from Editing_function import *
+# import needed libraries
+from upgrade_rpg_character_manager.Editing_function import *
 import random
 import sys
-from franco import (viewchars, createcharacters, visualization_menu, analysis_menu, random_gen_menu, portfolio_dashboard, comparison_tools, character_builder, save_load_menu, export_data, import_characters)
+from upgrade_rpg_character_manager.helper import (viewchars, createcharacters, visualization_menu, analysis_menu, random_gen_menu, portfolio_dashboard, comparison_tools, character_builder, save_load_menu, export_data, import_characters)
 from arsh import intro
 
+# database
 database = {
     "Zarkon":{"simpleinfo":("Dragonborn", "Fighter"), "level": 8, "Items_Dictionary": {"Weapon": ["Shortsword", "Weapon", "any"], "Armor": ["any", "Armor", "any"], "Inventory": []}, "skills":{("Fireball","A bright streak flashes from the caster to a point within 150 feet, erupting into a 20-foot-radius sphere of fire!")}, "attributes": [["strength", "dexterity", "intelligence", "wisdom", "constitution", "health", "armor class", "charisma"], [random.randint(8, 18), random.randint(8, 18), random.randint(8, 18), random.randint(8, 18), random.randint(8, 18), random.randint(8, 15), random.randint(10, 17), random.randint(8, 18)]]},
     "Gulnum":{"simpleinfo":("Gnome", "Sorcerer"), "level": 4, "Items_Dictionary": {"Weapon": ["Mace", "Weapon", "None"], "Armor": ["None", "Armor", "None"], "Inventory": []}, "skills":{("Magic missile","A missile of magical force springs from the caster's finger to strike a target within 120 feet")}, "attributes": [["strength", "dexterity", "intelligence", "wisdom", "constitution", "health", "armor class", "charisma"], [random.randint(8, 18), random.randint(8, 18), random.randint(8, 18), random.randint(8, 18), random.randint(8, 18), random.randint(8, 15), random.randint(10, 17), random.randint(8, 18)]]},
     "Zylvina":{"simpleinfo":("Elf", "Cleric"), "level": 13,"Items_Dictionary": {"Weapon": ["Whip", "Weapon", "None"], "Armor": ["None", "Armor", "None"], "Inventory": []}, "skills":{("Heal","The character can heal wounds and restore health")}, "attributes": [["strength", "dexterity", "intelligence", "wisdom", "constitution", "health", "armor class", "charisma"], [random.randint(8, 18), random.randint(8, 18), random.randint(8, 18), random.randint(8, 18), random.randint(8, 18), random.randint(8, 15), random.randint(10, 17), random.randint(8, 18)]]},
 }
 
-def inputchecker(rangeofchoices):
-    while True:
-        choicevar = input(f"\nWhich one would you like to choose? (1 - {rangeofchoices})\n").strip().capitalize()
-        try:
-            choicevar = int(choicevar)
-            if choicevar in range(1, rangeofchoices + 1):
-                break
-            else:
-                print("That's not an option :(")
-        except:
-            print("Please enter a valid integer number.")
-    return choicevar
-
+# main menu
 def mainmenu(database):
     while True:
         print("\nMain Menu:")
@@ -67,6 +57,7 @@ def mainmenu(database):
         else:
             print("Invalid choice.")
 
+# run the program
 if __name__ == "__main__":
     intro()
     mainmenu(database)
