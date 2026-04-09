@@ -6,7 +6,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from faker import Faker
-from upgrade_rpg_character_manager.Editing_function import editcharacters
+from Editing_function import editcharacters
 
 # setup faker
 fake = Faker()
